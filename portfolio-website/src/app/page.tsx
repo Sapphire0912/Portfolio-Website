@@ -19,70 +19,70 @@ export default function Home() {
         darkMode ? "bg-slate-700 text-white" : "bg-[#f1ede8] text-black"
       } min-h-screen`}
     >
-      <div id="header">
-        <section className="flex justify-between items-center p-6">
-          <div
-            className={`${
-              darkMode ? "bg-gray-300 text-black" : "bg-gray-900 text-white"
-            } text-xl font-bold p-2 rounded-md`}
+      <header
+        id="header"
+        className="fixed top-0 left-0 w-full flex justify-between items-center p-6"
+      >
+        <div
+          className={`${
+            darkMode ? "bg-gray-300 text-black" : "bg-gray-900 text-white"
+          } text-xl font-bold p-2 rounded-md`}
+        >
+          HE
+        </div>
+        <nav className="space-x-8 text-xl font-bold">
+          <a href="#" className={`relative hover:border-b-4 ${navColor}`}>
+            首頁
+          </a>
+          <a
+            href="#projects"
+            className={`relative hover:border-b-4 ${navColor}`}
           >
-            HE
-          </div>
-          <nav className="space-x-8 text-xl font-bold">
-            <a href="#" className={`relative hover:border-b-4 ${navColor}`}>
-              首頁
-            </a>
-            <a
-              href="#projects"
-              className={`relative hover:border-b-4 ${navColor}`}
-            >
-              專案作品
-            </a>
-            <a
-              href="#resume"
-              className={`relative hover:border-b-4 ${navColor}`}
-            >
-              履歷
-            </a>
-            <a
-              href="#contact"
-              className={`relative hover:border-b-4 ${navColor}`}
-            >
-              與我聯繫
-            </a>
-          </nav>
-          <button
-            type="button"
-            className={`${
-              darkMode ? "bg-gray-300" : "bg-slate-100"
-            } rounded-full`}
-            onClick={() => setDarkMode(!darkMode)}
+            專案作品
+          </a>
+          <a href="#resume" className={`relative hover:border-b-4 ${navColor}`}>
+            履歷
+          </a>
+          <a
+            href="#contact"
+            className={`relative hover:border-b-4 ${navColor}`}
           >
-            <img
-              width={48}
-              height={48}
-              src={darkMode ? "/sun.svg" : "/moon.png"}
-              alt={darkMode ? "sun" : "moon"}
-            />
-          </button>
-        </section>
-      </div>
+            與我聯繫
+          </a>
+        </nav>
+        <button
+          type="button"
+          className={`${
+            darkMode ? "bg-gray-300" : "bg-slate-100"
+          } rounded-full`}
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          <img
+            width={48}
+            height={48}
+            src={darkMode ? "/sun.svg" : "/moon.png"}
+            alt={darkMode ? "sun" : "moon"}
+          />
+        </button>
+      </header>
 
-      <div id="home">
-        <AboutSection />
-      </div>
+      <main className="pt-24">
+        <div id="home">
+          <AboutSection />
+        </div>
 
-      <div id="projects">
-        <ProjectSection />
-      </div>
+        <div id="projects">
+          <ProjectSection />
+        </div>
 
-      <div id="resume">
-        <ResumeSection />
-      </div>
+        <div id="resume">
+          <ResumeSection />
+        </div>
 
-      <div id="contact">
-        <ContactSection />
-      </div>
+        <div id="contact">
+          <ContactSection />
+        </div>
+      </main>
       <Footer />
     </section>
   );

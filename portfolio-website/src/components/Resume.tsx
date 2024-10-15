@@ -1,7 +1,7 @@
 import React from "react";
 
 const Resume = () => {
-  return <div>Resume</div>;
+  return <div>履歷</div>;
 };
 
 export default Resume;
