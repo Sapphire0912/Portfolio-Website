@@ -9,19 +9,55 @@ import { useState } from "react";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const navColor: string = darkMode
+    ? "hover:border-green"
+    : "hover:border-blue-700";
 
   return (
-    <section>
+    <section
+      className={`${
+        darkMode ? "bg-slate-700 text-white" : "bg-[#f1ede8] text-black"
+      } min-h-screen`}
+    >
       <div id="header">
-        <section className="flex-center">
-          <div className="border-2 border-green-500">HE</div>
-          <nav className="nav">
-            <a href="#home">首頁</a>
-            <a href="#projects">專案作品</a>
-            <a href="#resume">履歷</a>
-            <a href="#contact">與我聯繫</a>
+        <section className="flex justify-between items-center p-6">
+          <div
+            className={`${
+              darkMode ? "bg-gray-300 text-black" : "bg-gray-900 text-white"
+            } text-xl font-bold p-2 rounded-md`}
+          >
+            HE
+          </div>
+          <nav className="space-x-8 text-xl font-bold">
+            <a href="#" className={`relative hover:border-b-4 ${navColor}`}>
+              首頁
+            </a>
+            <a
+              href="#projects"
+              className={`relative hover:border-b-4 ${navColor}`}
+            >
+              專案作品
+            </a>
+            <a
+              href="#resume"
+              className={`relative hover:border-b-4 ${navColor}`}
+            >
+              履歷
+            </a>
+            <a
+              href="#contact"
+              className={`relative hover:border-b-4 ${navColor}`}
+            >
+              與我聯繫
+            </a>
           </nav>
-          <button type="button" onClick={() => setDarkMode(!darkMode)}>
+          <button
+            type="button"
+            className={`${
+              darkMode ? "bg-gray-300" : "bg-slate-100"
+            } rounded-full`}
+            onClick={() => setDarkMode(!darkMode)}
+          >
             <img
               width={48}
               height={48}
