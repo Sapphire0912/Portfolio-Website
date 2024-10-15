@@ -5,7 +5,6 @@ import ProjectSection from "../components/Project";
 import ResumeSection from "../components/Resume";
 import ContactSection from "../components/Contact";
 import Footer from "../components/Footer";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
@@ -23,11 +22,10 @@ export default function Home() {
             <a href="#contact">與我聯繫</a>
           </nav>
           <button type="button" onClick={() => setDarkMode(!darkMode)}>
-            <Image
+            <img
               width={48}
               height={48}
-              style={{ width: "auto", height: "auto" }}
-              src={darkMode ? "/images/sun.svg" : "/images/moon.png"}
+              src={darkMode ? "/sun.svg" : "/moon.png"}
               alt={darkMode ? "sun" : "moon"}
             />
           </button>
