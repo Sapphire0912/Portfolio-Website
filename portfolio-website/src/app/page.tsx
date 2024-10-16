@@ -68,7 +68,7 @@ export default function Home() {
 
       <main className="pt-24">
         <div id="home">
-          <AboutSection />
+          <AboutSection darkMode={darkMode} />
         </div>
 
         <div id="projects">
