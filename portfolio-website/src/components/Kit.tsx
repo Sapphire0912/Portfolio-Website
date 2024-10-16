@@ -4,6 +4,24 @@ interface DarkModeProps {
   darkMode: boolean;
 }
 
+interface ToolKitProps {
+  src: string;
+  alt: string;
+}
+
+const toolKitsrc: Array<ToolKitProps> = [
+  { src: "/js.png", alt: "js" },
+  { src: "/ts.png", alt: "ts" },
+  { src: "/react.png", alt: "react" },
+  { src: "/nodejs.png", alt: "nodejs" },
+  { src: "/mysql.png", alt: "mysql" },
+  { src: "/python.png", alt: "python" },
+  { src: "/C.png", alt: "C" },
+  { src: "/mongodb.png", alt: "mongodb" },
+  { src: "/git.png", alt: "git" },
+  { src: "/docker.png", alt: "docker" },
+];
+
 const Kit: React.FC<DarkModeProps> = ({ darkMode }) => {
   return (
     <section className="border-2 border-red-500 min-h-screen ">
@@ -20,16 +38,9 @@ const Kit: React.FC<DarkModeProps> = ({ darkMode }) => {
 
         <div className="kit">
           {/* 使用 grid 來排版? */}
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/ts.png" alt="ts" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
-          <Image src="/js.png" alt="js" width={48} height={48} />
+          {toolKitsrc.map((item) => (
+            <Image src={item.src} alt={item.alt} width={48} height={48} />
+          ))}
         </div>
       </div>
     </section>

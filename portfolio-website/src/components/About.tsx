@@ -6,20 +6,21 @@ interface DarkModeProps {
 }
 
 interface SkillsProps {
-  name: String;
+  id: number;
+  name: string;
   percentage: number;
 }
 
 const About: React.FC<DarkModeProps> = ({ darkMode }) => {
-  const linkBg: String = darkMode ? "bg-slate-200" : "bg-[#cccbc9]";
-  const barColor: String = darkMode ? "bg-green-200" : "bg-blue-500";
+  const linkBg: string = darkMode ? "bg-slate-200" : "bg-[#cccbc9]";
+  const barColor: string = darkMode ? "bg-green-200" : "bg-blue-500";
 
   const skills: Array<SkillsProps> = [
-    { name: "JS, Web Development", percentage: 65 },
-    { name: "Computer Vision", percentage: 90 },
-    { name: "Machine Learning", percentage: 80 },
-    { name: "Deep Learning", percentage: 70 },
-    { name: "Python", percentage: 90 },
+    { id: 1, name: "JS, Web Development", percentage: 65 },
+    { id: 2, name: "Computer Vision", percentage: 90 },
+    { id: 3, name: "Machine Learning", percentage: 80 },
+    { id: 4, name: "Deep Learning", percentage: 70 },
+    { id: 5, name: "Python", percentage: 90 },
   ];
 
   return (
@@ -102,8 +103,8 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
                 <h5 className="text-lg">{skill.name}</h5>
                 <div className="w-full bg-gray-400 rounded-full h-4">
                   <div
-                    className={`${barColor} h-4 rounded-full`}
-                    style={{ width: `${skill.percentage}%` }}
+                    key={skill.id}
+                    className={`${barColor} h-4 rounded-full w-[${skill.percentage}%]`}
                   ></div>
                 </div>
               </div>
