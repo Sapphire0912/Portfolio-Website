@@ -11,7 +11,7 @@ import { useState } from "react";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const navColor: string = darkMode
-    ? "hover:border-green"
+    ? "hover:border-green-200"
     : "hover:border-blue-700";
 
   return (
@@ -22,7 +22,9 @@ export default function Home() {
     >
       <header
         id="header"
-        className="fixed top-0 left-0 w-full z-10 flex justify-between items-center p-6 shadow-md"
+        className={`${
+          darkMode ? "bg-slate-700" : "bg-[#f1ede8]"
+        } sticky top-0 left-0 w-full z-50 flex justify-between items-center p-6 shadow-md`}
       >
         <div
           className={`${
@@ -75,6 +77,7 @@ export default function Home() {
         <div id="toolKit">
           <KitSection darkMode={darkMode} />
         </div>
+
         <div id="projects">
           <ProjectSection />
         </div>
