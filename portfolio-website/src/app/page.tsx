@@ -22,7 +22,7 @@ export default function Home() {
     >
       <header
         id="header"
-        className="fixed top-0 left-0 w-full flex justify-between items-center p-6"
+        className="fixed top-0 left-0 w-full z-10 flex justify-between items-center p-6 shadow-md"
       >
         <div
           className={`${
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
 
         <div id="toolKit">
-          <KitSection />
+          <KitSection darkMode={darkMode} />
         </div>
         <div id="projects">
           <ProjectSection />

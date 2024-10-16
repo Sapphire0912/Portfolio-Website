@@ -24,8 +24,8 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
 
   return (
     <section className="flex justify-center items-center min-h-screen ">
-      <div className=" w-full max-w-[80%] flex justify-center items-center">
-        <div className=" p-4 m-2">
+      <div className="w-full max-w-[80%] flex justify-center items-stretch">
+        <div className="flex-[0_1_40%] p-4 m-2">
           <h1 className={`font-bold text-6xl p-2`}>JIAYE HE</h1>
           <h3 className={`font-bold text-2xl p-2 `}>
             國立高雄科技大學 電子工程系
@@ -89,10 +89,10 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
           </div>
         </div>
 
-        <div className=" p-4 m-2 ">
+        <div className="flex-[0_1_60%] p-4 m-2 ">
           <h3 className={`text-4xl text-center`}>關於我</h3>
           <p className={`text-xl text-center mt-2`}>
-            就學期間接觸過醫療影像辨識，機器學習、深度學習領域，額外修讀網頁全端開發課程。目前正學習微服務、AWS
+            就學期間接觸過醫療影像辨識，機器學習、深度學習領域，額外修讀網頁全端開發課程。目前正學習演算法、微服務架構、AWS
             雲端技術等領域，目標往後端工程與資料科學領域發展。
           </p>
 
