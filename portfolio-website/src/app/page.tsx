@@ -1,6 +1,7 @@
 "use client";
 
 import AboutSection from "../components/About";
+import KitSection from "../components/Kit";
 import ProjectSection from "../components/Project";
 import ResumeSection from "../components/Resume";
 import ContactSection from "../components/Contact";
@@ -71,6 +72,9 @@ export default function Home() {
           <AboutSection darkMode={darkMode} />
         </div>
 
+        <div id="toolKit">
+          <KitSection />
+        </div>
         <div id="projects">
           <ProjectSection />
         </div>
