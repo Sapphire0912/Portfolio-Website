@@ -11,7 +11,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
   } bg-slate-200 border-2 focus-within:border-blue-700 transition`;
 
   return (
-    <section className="min-h-80 border-2 border-red-500">
+    <section className="min-h-80 border-2 border-red-500 pb-10 pt-4">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span
@@ -23,9 +23,9 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
           </span>
         </p>
 
-        <div className="border-2 border-blue-500 flex mt-4 pt-10 pb-4 w-[80%] ">
-          <div className="border-2 border-green-500">left</div>
-          <div className="border-2 border-purple-500 text-black">
+        <div className="border-2 border-blue-500 flex justify-around items-start mt-4 pt-10 pb-4 w-[80%] ">
+          <div className="border-2 border-green-500 flex-[0_1_40%]">left</div>
+          <div className="border-2 border-purple-500 flex-[0_1_60%] text-black">
             <form>
               <div className={`${formStyle} flex mb-6`}>
                 <Image
@@ -65,12 +65,11 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                   height={36}
                 />
                 <textarea
-                  cols={50}
-                  rows={6}
-                  className="bg-transparent focus:outline-none pl-2"
+                  className="bg-transparent focus:outline-none pl-2 w-full h-32"
                   placeholder="留言 Message"
                 ></textarea>
               </div>
+
               <div className="flex justify-end">
                 <button
                   type="reset"
