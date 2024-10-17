@@ -7,26 +7,27 @@ interface DarkModeProps {
 interface ToolKitProps {
   src: string;
   alt: string;
+  text: string;
 }
 
 const toolKitsrc: Array<ToolKitProps> = [
-  { src: "/js.png", alt: "js" },
-  { src: "/ts.png", alt: "ts" },
-  { src: "/react.png", alt: "react" },
-  { src: "/nodejs.png", alt: "nodejs" },
-  { src: "/mysql.png", alt: "mysql" },
-  { src: "/python.png", alt: "python" },
-  { src: "/C.png", alt: "C" },
-  { src: "/mongodb.png", alt: "mongodb" },
-  { src: "/git.png", alt: "git" },
-  { src: "/docker.png", alt: "docker" },
+  { src: "/js.png", alt: "js", text: "Javascript" },
+  { src: "/ts.png", alt: "ts", text: "Typescript" },
+  { src: "/react.png", alt: "react", text: "React" },
+  { src: "/nodejs.png", alt: "nodejs", text: "Node.js" },
+  { src: "/mysql.png", alt: "mysql", text: "MySQL" },
+  { src: "/python.png", alt: "python", text: "Python" },
+  { src: "/C.png", alt: "C", text: "C" },
+  { src: "/mongodb.png", alt: "mongodb", text: "MongoDB" },
+  { src: "/git.png", alt: "git", text: "Git" },
+  { src: "/docker.png", alt: "docker", text: "Docker" },
 ];
 
 const Kit: React.FC<DarkModeProps> = ({ darkMode }) => {
   return (
-    <section className="border-2 border-red-500 min-h-screen ">
-      <div className="text-center border-2 border-green-600">
-        <p className={`text-4xl`}>
+    <section className="min-h-screen ">
+      <div className="flex flex-col items-center">
+        <p className={`text-4xl text-center`}>
           <span
             className={`${
               darkMode ? "border-green-200" : "border-blue-700"
@@ -36,10 +37,20 @@ const Kit: React.FC<DarkModeProps> = ({ darkMode }) => {
           </span>
         </p>
 
-        <div className="kit">
-          {/* 使用 grid 來排版? */}
-          {toolKitsrc.map((item) => (
-            <Image src={item.src} alt={item.alt} width={48} height={48} />
+        <div className=" mt-4 pt-10 pb-4 grid grid-cols-5 gap-6 w-[60%]">
+          {toolKitsrc.map((item, index) => (
+            <div key={index} className=" flex flex-col items-center">
+              <Image
+                className={`${
+                  darkMode ? "bg-slate-200" : "bg-slate-300"
+                } p-2 rounded-full mb-1`}
+                src={item.src}
+                alt={item.alt}
+                width={64}
+                height={64}
+              />
+              <span className="text-lg">{item.text}</span>
+            </div>
           ))}
         </div>
       </div>

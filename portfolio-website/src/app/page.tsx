@@ -24,7 +24,7 @@ export default function Home() {
         id="header"
         className={`${
           darkMode ? "bg-slate-700" : "bg-[#f1ede8]"
-        } sticky top-0 left-0 w-full z-50 flex justify-between items-center p-6 shadow-md`}
+        } fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 shadow-md`}
       >
         <div
           className={`${

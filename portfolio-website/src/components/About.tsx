@@ -99,12 +99,12 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
 
           <div className="space-y-4 flex flex-col items-center">
             {skills.map((skill) => (
-              <div className="w-[80%] mt-5 text-center">
+              <div key={skill.id} className="w-[80%] mt-5 text-center">
                 <h5 className="text-lg">{skill.name}</h5>
                 <div className="w-full bg-gray-400 rounded-full h-4">
                   <div
-                    key={skill.id}
-                    className={`${barColor} h-4 rounded-full w-[${skill.percentage}%]`}
+                    className={`${barColor} h-4 rounded-full`}
+                    style={{ width: `${skill.percentage}%` }}
                   ></div>
                 </div>
               </div>
