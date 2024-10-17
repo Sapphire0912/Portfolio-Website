@@ -79,11 +79,11 @@ export default function Home() {
         </div>
 
         <div id="projects">
-          <ProjectSection />
+          <ProjectSection darkMode={darkMode} />
         </div>
 
         <div id="resume">
-          <ResumeSection />
+          <ResumeSection darkMode={darkMode} />
         </div>
 
         <div id="contact">
