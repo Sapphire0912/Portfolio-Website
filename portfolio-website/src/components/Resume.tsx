@@ -6,7 +6,7 @@ interface DarkModeProps {
 
 const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
   return (
-    <section className="min-h-96 border-2 border-blue-700">
+    <section className="min-h-96 pt-24 border-2 border-blue-700">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span

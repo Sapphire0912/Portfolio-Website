@@ -12,7 +12,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
   } bg-slate-200 border-2 focus-within:border-blue-700 transition`;
 
   return (
-    <section className="min-h-80 pb-10 pt-4">
+    <section className="min-h-80 pb-10 pt-28">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span
