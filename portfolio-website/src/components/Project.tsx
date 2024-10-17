@@ -55,7 +55,7 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
             <p className="text-base mb-3">時間：18個月</p>
             <div className="flex justify-start text-black">
               <a
-                href="https://github.com/Sapphire0912/LaboratoryProject"
+                href="https://www.youtube.com/watch?v=iteGkPYy1z4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${
