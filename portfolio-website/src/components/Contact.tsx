@@ -6,12 +6,13 @@ interface DarkModeProps {
 }
 
 const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
+  const linkBg: string = darkMode ? "bg-slate-200" : "bg-[#cccbc9]";
   const formStyle: string = `${
     darkMode ? "border-slate-200" : "border-slate-500"
   } bg-slate-200 border-2 focus-within:border-blue-700 transition`;
 
   return (
-    <section className="min-h-80 border-2 border-red-500 pb-10 pt-4">
+    <section className="min-h-80 pb-10 pt-4">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span
@@ -23,9 +24,57 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
           </span>
         </p>
 
-        <div className="border-2 border-blue-500 flex justify-around items-start mt-4 pt-10 pb-4 w-[80%] ">
-          <div className="border-2 border-green-500 flex-[0_1_40%]">left</div>
-          <div className="border-2 border-purple-500 flex-[0_1_60%] text-black">
+        <div className="flex justify-around items-start mt-4 pt-10 pb-4 w-[80%] ">
+          <div className="flex-[0_1_40%]">
+            <p className="text-xl font-bold  mb-6">
+              下方是我的社交媒體聯絡方式：
+            </p>
+            <div className="flex mb-6">
+              <a
+                href="https://line.me/ti/p/MerUTyrgLm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${linkBg} p-2 rounded-full m-2`}
+              >
+                <Image
+                  src={darkMode ? "/line-dark.png" : "/line-bright.png"}
+                  alt="LINE"
+                  width={36}
+                  height={36}
+                />
+              </a>
+              <a
+                href="https://github.com/Sapphire0912"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${linkBg} p-2 rounded-full m-2`}
+              >
+                <Image
+                  src={darkMode ? "/github-dark.png" : "/github-bright.png"}
+                  alt="Github"
+                  width={36}
+                  height={36}
+                />
+              </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=hejiaye1002@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${linkBg} p-2 rounded-full m-2`}
+              >
+                <Image
+                  src={darkMode ? "/mail-dark.png" : "/mail-bright.png"}
+                  alt="Github"
+                  width={36}
+                  height={36}
+                />
+              </a>
+            </div>
+            <p className="text-xl font-bold">
+              也歡迎透過右側表單留言傳送給我！
+            </p>
+          </div>
+          <div className="flex-[0_1_60%] text-black">
             <form>
               <div className={`${formStyle} flex mb-6`}>
                 <Image
