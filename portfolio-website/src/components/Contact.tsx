@@ -6,9 +6,9 @@ interface DarkModeProps {
 }
 
 const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
-  const formStyle: string =
-    "bg-slate-200 border-2 border-slate-200 focus-within:border-blue-700 transition";
-  ("");
+  const formStyle: string = `${
+    darkMode ? "border-slate-200" : "border-slate-500"
+  } bg-slate-200 border-2 focus-within:border-blue-700 transition`;
 
   return (
     <section className="min-h-80 border-2 border-red-500">
@@ -57,7 +57,9 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
 
               <div className={`${formStyle} flex items-start mb-6`}>
                 <Image
-                  src={`${darkMode ? "/send-dark.png" : "/send-bright.png"}`}
+                  src={`${
+                    darkMode ? "/message-dark.png" : "/message-bright.png"
+                  }`}
                   alt="send"
                   width={36}
                   height={36}
@@ -69,9 +71,44 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                   placeholder="留言 Message"
                 ></textarea>
               </div>
-              <div>
-                <button type="reset">清除</button>
-                <button type="submit">送出</button>
+              <div className="flex justify-end">
+                <button
+                  type="reset"
+                  className={`${
+                    darkMode
+                      ? "bg-blue-200 border-slate-700 border"
+                      : "bg-red-200 border-slate-700 border"
+                  } flex items-center pl-3 pr-3 pt-2 pb-2 mr-3 rounded-3xl`}
+                >
+                  <Image
+                    src={`${
+                      darkMode ? "/reset-dark.png" : "/reset-bright.png"
+                    }`}
+                    alt="reset"
+                    className="mr-2"
+                    width={24}
+                    height={24}
+                  />
+                  <span className="text-lg">清除</span>
+                </button>
+
+                <button
+                  type="submit"
+                  className={`${
+                    darkMode
+                      ? "bg-green-200 border-slate-200 border"
+                      : "bg-blue-200 border-slate-700 border"
+                  } flex items-center pl-3 pr-3 pt-2 pb-2 rounded-3xl`}
+                >
+                  <Image
+                    src={`${darkMode ? "/send-dark.png" : "/send-bright.png"}`}
+                    alt="reset"
+                    className="mr-2"
+                    width={24}
+                    height={24}
+                  />
+                  <span className="text-lg">送出</span>
+                </button>
               </div>
             </form>
           </div>
