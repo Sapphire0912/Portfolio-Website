@@ -25,7 +25,7 @@ const toolKitsrc: Array<ToolKitProps> = [
 
 const Kit: React.FC<DarkModeProps> = ({ darkMode }) => {
   return (
-    <section className="min-h-screen ">
+    <section className="min-h-screen">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span

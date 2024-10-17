@@ -87,7 +87,7 @@ export default function Home() {
         </div>
 
         <div id="contact">
-          <ContactSection />
+          <ContactSection darkMode={darkMode} />
         </div>
       </main>
       <Footer />
