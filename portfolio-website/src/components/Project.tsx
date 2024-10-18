@@ -1,5 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/swiper-bundle.css";
+
 interface DarkModeProps {
   darkMode: boolean;
 }
@@ -32,9 +36,42 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
             專案作品
           </span>
         </p>
-        <div className="border-2 border-green-600 flex justify-center items-start mt-4 pt-10 pb-4 w-[90%]">
-          <div id="project" className="flex-[0_1_50%] border-2 border-red-500">
-            專案作品
+        <div className="border-2 border-green-600 flex justify-end mt-4 pt-10 pb-4 w-[60%]">
+          <div id="project" className="flex-[0_1_20%] border-2 border-red-500">
+            <Swiper
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              loop={false}
+              modules={[Navigation, Pagination]}
+              className="w-full max-w-md flex justify-end"
+            >
+              <SwiperSlide>
+                <div className="pb-8">
+                  <img src="/projects/lab/example.gif" alt="example" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="pb-8">
+                  <img src="/projects/lab/skeletonize.png" alt="skeletonize" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="pb-8">
+                  <img src="/projects/lab/threshold.gif" alt="threshold" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="pb-8">
+                  <img src="/projects/lab/semantic.gif" alt="semantic" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="pb-8">
+                  <img src="/projects/lab/result.gif" alt="result" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
           <div
             id="project description"
