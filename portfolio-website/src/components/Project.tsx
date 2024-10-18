@@ -25,7 +25,7 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
     : "pt-1 pb-1 pl-2 pr-2 mr-2 mb-2 rounded-2xl border border-blue-700 text-blue-700";
 
   return (
-    <section className="min-h-96 border-2 border-blue-700 pt-24">
+    <section className="min-h-96 pt-24">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span
@@ -36,15 +36,15 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
             專案作品
           </span>
         </p>
-        <div className="border-2 border-green-600 flex justify-end mt-4 pt-10 pb-4 w-[60%]">
-          <div id="project" className="flex-[0_1_20%] border-2 border-red-500">
+        <div className="flex justify-end mt-4 pt-10 pb-4 w-[90%]">
+          <div id="project" className="flex-[0_1_20%] mr-4">
             <Swiper
               slidesPerView={1}
               navigation
               pagination={{ clickable: true }}
               loop={false}
               modules={[Navigation, Pagination]}
-              className="w-full max-w-md flex justify-end"
+              className="w-full max-w-md"
             >
               <SwiperSlide>
                 <div className="pb-8">
@@ -73,10 +73,7 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div
-            id="project description"
-            className="flex-[0_1_50%] border-2 border-purple-500 pl-2"
-          >
+          <div id="project description" className="flex-[0_1_50%] pl-2">
             <h3 className="text-2xl font-bold mb-3">超音波影像辨識</h3>
             <div className="flex flex-wrap">
               {labProjectTech.map((tech) => (
