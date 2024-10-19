@@ -17,14 +17,21 @@ const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
             履歷
           </span>
         </p>
-        <div className="border-2 border-green-600 flex justify-center items-start mt-4 pt-10 pb-4 w-[70%]">
-          <div id="resume-prop" className="border-2 border-red-500">
-            履歷縮圖
+        <div className=" flex justify-center items-center mt-4 pt-10 pb-4 w-[70%]">
+          <div id="resume-prop">
+            <Image
+              src="/resume/cv_thumbnail.png"
+              alt="resume"
+              className={`${
+                darkMode
+                  ? "border-gray-600 bg-green-200"
+                  : "border-black bg-gray-600"
+              } border-2 p-1 mr-4`}
+              width={320}
+              height={640}
+            />
           </div>
-          <div
-            id="download-and-open resume btn"
-            className="border-2 border-purple-500"
-          >
+          <div id="download-and-open resume btn">
             <div className="flex justify-end text-black">
               <button
                 type="button"
