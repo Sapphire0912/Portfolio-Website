@@ -6,7 +6,7 @@ interface DarkModeProps {
 
 const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
   return (
-    <section className="min-h-96 pt-24 border-2 border-blue-700">
+    <section className="min-h-96 pt-24 ">
       <div className="flex flex-col items-center">
         <p className={`text-4xl text-center`}>
           <span
@@ -33,13 +33,14 @@ const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
           </div>
           <div id="download-and-open resume btn">
             <div className="flex justify-end text-black">
-              <button
-                type="button"
+              <a
+                href="/resume/jiayehe_104_resume.pdf"
+                download="jiayehe_resume.pdf"
                 className={`${
                   darkMode
                     ? "bg-blue-200 border-slate-700 border"
                     : "bg-red-200 border-slate-700 border"
-                } flex items-center pl-3 pr-3 pt-2 pb-2 mr-3`}
+                } flex items-center pl-3 pr-3 pt-2 pb-2 mr-3 text-lg`}
               >
                 <Image
                   src={`${
@@ -50,16 +51,17 @@ const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
                   width={24}
                   height={24}
                 />
-                <span className="text-lg">下載 PDF</span>
-              </button>
+                下載 PDF
+              </a>
 
-              <button
-                type="button"
+              <a
+                href="/resume/jiayehe_104_resume.pdf"
+                target="_blank"
                 className={`${
                   darkMode
                     ? "bg-green-200 border-slate-200 border"
                     : "bg-blue-200 border-slate-700 border"
-                } flex items-center pl-3 pr-3 pt-2 pb-2`}
+                } flex items-center pl-3 pr-3 pt-2 pb-2 text-lg`}
               >
                 <Image
                   src={`${
@@ -72,8 +74,8 @@ const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
                   width={24}
                   height={24}
                 />
-                <span className="text-lg">線上瀏覽</span>
-              </button>
+                線上瀏覽
+              </a>
             </div>
           </div>
         </div>

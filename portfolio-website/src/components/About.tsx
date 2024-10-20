@@ -62,7 +62,7 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
               />
             </a>
             <a
-              href="https://github.com/Sapphire0912"
+              href="/resume/jiayehe_104_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className={`${linkBg} p-2 rounded-full m-2`}
