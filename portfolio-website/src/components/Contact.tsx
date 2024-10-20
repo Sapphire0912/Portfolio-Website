@@ -75,7 +75,12 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
             </p>
           </div>
           <div className="flex-[0_1_60%] text-black">
-            <form>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
               <div className={`${formStyle} flex mb-6`}>
                 <Image
                   src={`${darkMode ? "/user-dark.png" : "/user-bright.png"}`}
@@ -119,6 +124,12 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                 ></textarea>
               </div>
 
+              <div className="hidden">
+                <label>
+                  BOT 偵測區域:
+                  <input name="bot-field" className="hidden" />
+                </label>
+              </div>
               <div className="flex justify-end">
                 <button
                   type="reset"
