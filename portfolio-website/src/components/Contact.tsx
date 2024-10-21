@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { FormEvent } from "react";
 import { useState } from "react";
@@ -34,12 +34,16 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
     });
 
     if (response.ok) {
-      setSubmitMsg("");
+      setSubmitMsg("您的留言已送出成功，收到訊息後會盡快與您聯繫！");
       form.reset();
     } else {
-      setSubmitMsg("ERROR");
+      setSubmitMsg("您的留言送出失敗，請使用其他聯絡方式與我聯繫！");
     }
   };
+
+  useEffect(() => {
+    setSubmitMsg("");
+  }, []);
 
   return (
     <section className="min-h-80 pb-10 pt-28">
@@ -159,6 +163,17 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                 </label>
               </div>
               <div className="flex justify-end">
+                {submitMsg && (
+                  <p
+                    className={
+                      darkMode
+                        ? "text-green-200 font-bold"
+                        : "text-blue-500 font-bold"
+                    }
+                  >
+                    {submitMsg}
+                  </p>
+                )}
                 <button
                   type="reset"
                   className={`${
