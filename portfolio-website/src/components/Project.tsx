@@ -36,7 +36,7 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
             專案作品
           </span>
         </p>
-        <div className="flex justify-end mt-4 pt-10 pb-4 w-[90%]">
+        <div className="lg:flex-row lg:w-[90%] flex flex-col justify-end mt-4 pt-10 pb-4 w-[70%]">
           <div id="project" className="flex-[0_1_20%] mr-4">
             <Swiper
               slidesPerView={1}
@@ -73,7 +73,10 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div id="project description" className="flex-[0_1_50%] pl-2">
+          <div
+            id="project description"
+            className="lg:items-start lg:text-left flex-[0_1_50%] pl-2 flex flex-col items-center justify-start text-center"
+          >
             <h3 className="text-2xl font-bold mb-3">超音波影像辨識</h3>
             <div className="flex flex-wrap">
               {labProjectTech.map((tech) => (
