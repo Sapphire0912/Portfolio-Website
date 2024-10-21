@@ -25,7 +25,7 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
 
   return (
     <section className="flex justify-center items-center min-h-screen ">
-      <div className="w-full max-w-[80%] flex justify-center items-stretch">
+      <div className="lg:w-full lg:max-w-[80%] lg:flex-row w-[80%] flex flex-col justify-center items-stretch">
         <div className="flex-[0_1_40%] p-4 m-2">
           <h1 className={`font-bold text-6xl p-2`}>JIAYE HE</h1>
           <h3 className={`font-bold text-2xl p-2 `}>
@@ -34,7 +34,7 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
           <p className={`text-lg p-2`}>
             熱愛程式開發，細心且重視效率並持續學習新技術
           </p>
-          <div className={`flex mt-12`}>
+          <div className={`flex mt-12 `}>
             <a
               href="https://line.me/ti/p/MerUTyrgLm"
               target="_blank"
@@ -90,7 +90,7 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
           </div>
         </div>
 
-        <div className="flex-[0_1_60%] p-4 m-2 ">
+        <div className="lg:mt-0 mt-2 flex-[0_1_60%] p-4 m-2">
           <h3 className={`text-4xl text-center`}>關於我</h3>
           <p className={`text-xl text-center mt-2`}>
             就學期間接觸過醫療影像辨識，機器學習、深度學習領域，額外修讀網頁全端開發課程。目前正學習演算法、微服務架構、AWS
