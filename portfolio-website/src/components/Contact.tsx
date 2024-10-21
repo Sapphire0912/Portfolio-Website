@@ -1,8 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import { FormEvent } from "react";
+import { useState } from "react";
 
 interface DarkModeProps {
   darkMode: boolean;
+}
+interface FormDataProps {
+  name: string;
+  email: string;
+  content: string;
 }
 
 const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
@@ -10,6 +17,29 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
   const formStyle: string = `${
     darkMode ? "border-slate-200" : "border-slate-500"
   } bg-slate-200 border-2 focus-within:border-blue-700 transition`;
+
+  const [submitMsg, setSubmitMsg] = useState("");
+
+  const formSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/meoqoode", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      setSubmitMsg("");
+      form.reset();
+    } else {
+      setSubmitMsg("ERROR");
+    }
+  };
 
   return (
     <section className="min-h-80 pb-10 pt-28">
@@ -75,12 +105,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
             </p>
           </div>
           <div className="flex-[0_1_60%] text-black">
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
+            <form onSubmit={formSubmit} method="POST">
               <div className={`${formStyle} flex mb-6`}>
                 <Image
                   src={`${darkMode ? "/user-dark.png" : "/user-bright.png"}`}
@@ -92,6 +117,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                   type="text"
                   className="bg-transparent focus:outline-none pl-2 w-full"
                   placeholder="名稱 Name"
+                  name="name"
                 ></input>
               </div>
 
@@ -106,6 +132,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                   type="email"
                   className="bg-transparent focus:outline-none pl-2 w-full"
                   placeholder="電子郵件 E-mail"
+                  name="email"
                 ></input>
               </div>
 
@@ -121,6 +148,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                 <textarea
                   className="bg-transparent focus:outline-none pl-2 w-full h-32"
                   placeholder="留言 Message"
+                  name="content"
                 ></textarea>
               </div>
 
