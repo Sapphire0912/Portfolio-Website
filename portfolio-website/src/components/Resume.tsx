@@ -17,7 +17,7 @@ const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
             履歷
           </span>
         </p>
-        <div className=" flex justify-center items-center mt-4 pt-10 pb-4 w-[70%]">
+        <div className="lg:flex-row sm:w-[70%] flex flex-col justify-center items-center mt-4 pt-10 pb-4 w-[80%]">
           <div id="resume-prop">
             <Image
               src="/resume/cv_thumbnail.png"
@@ -31,7 +31,7 @@ const Resume: React.FC<DarkModeProps> = ({ darkMode }) => {
               height={640}
             />
           </div>
-          <div id="download-and-open resume btn">
+          <div id="download-and-open resume btn" className="lg:mt-0 mt-6">
             <div className="flex justify-end text-black">
               <a
                 href="/resume/jiayehe_104_resume.pdf"
