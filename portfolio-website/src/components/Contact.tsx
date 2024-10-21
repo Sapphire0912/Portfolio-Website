@@ -162,7 +162,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                   <input name="bot-field" className="hidden" />
                 </label>
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-end items-center">
                 {submitMsg && (
                   <p
                     className={
