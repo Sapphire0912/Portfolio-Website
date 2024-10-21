@@ -58,9 +58,11 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
           </span>
         </p>
 
-        <div className="flex justify-around items-start mt-4 pt-10 pb-4 w-[80%] ">
-          <div className="flex-[0_1_40%]">
-            <p className="text-xl font-bold  mb-6">
+        <div
+          className={`xl:flex-row xl:items-start xl:justify-around flex flex-col items-center justify-between mt-4 pt-10 pb-4 w-[80%]`}
+        >
+          <div className="xl:mb-0 flex-[0_1_40%] mb-10">
+            <p className="text-xl font-bold mb-6">
               下方是我的社交媒體聯絡方式：
             </p>
             <div className="flex mb-6">
@@ -108,7 +110,7 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
               也歡迎透過右側表單留言傳送給我！
             </p>
           </div>
-          <div className="flex-[0_1_60%] text-black">
+          <div className="xl:flex-[0_1_60%] md:w-[70%] w-[90%] text-black">
             <form onSubmit={formSubmit} method="POST">
               <div className={`${formStyle} flex mb-6`}>
                 <Image
@@ -162,55 +164,60 @@ const Contact: React.FC<DarkModeProps> = ({ darkMode }) => {
                   <input name="bot-field" className="hidden" />
                 </label>
               </div>
-              <div className="flex justify-end items-center">
+
+              <div className="lg:justify-end lg:flex-row flex flex-col items-center justify-center">
                 {submitMsg && (
                   <p
-                    className={
+                    className={`${
                       darkMode
                         ? "text-green-200 font-bold"
                         : "text-blue-500 font-bold"
-                    }
+                    } `}
                   >
                     {submitMsg}
                   </p>
                 )}
-                <button
-                  type="reset"
-                  className={`${
-                    darkMode
-                      ? "bg-blue-200 border-slate-700 border"
-                      : "bg-red-200 border-slate-700 border"
-                  } flex items-center pl-3 pr-3 pt-2 pb-2 mr-3 rounded-3xl`}
-                >
-                  <Image
-                    src={`${
-                      darkMode ? "/reset-dark.png" : "/reset-bright.png"
-                    }`}
-                    alt="reset"
-                    className="mr-2"
-                    width={24}
-                    height={24}
-                  />
-                  <span className="text-lg">清除</span>
-                </button>
+                <div className="lg:justify-end lg:mt-0 mt-4 flex">
+                  <button
+                    type="reset"
+                    className={`${
+                      darkMode
+                        ? "bg-blue-200 border-slate-700 border"
+                        : "bg-red-200 border-slate-700 border"
+                    } flex items-center pl-3 pr-3 pt-2 pb-2 mr-3 rounded-3xl`}
+                  >
+                    <Image
+                      src={`${
+                        darkMode ? "/reset-dark.png" : "/reset-bright.png"
+                      }`}
+                      alt="reset"
+                      className="mr-2"
+                      width={24}
+                      height={24}
+                    />
+                    <span className="text-lg">清除</span>
+                  </button>
 
-                <button
-                  type="submit"
-                  className={`${
-                    darkMode
-                      ? "bg-green-200 border-slate-200 border"
-                      : "bg-blue-200 border-slate-700 border"
-                  } flex items-center pl-3 pr-3 pt-2 pb-2 rounded-3xl`}
-                >
-                  <Image
-                    src={`${darkMode ? "/send-dark.png" : "/send-bright.png"}`}
-                    alt="reset"
-                    className="mr-2"
-                    width={24}
-                    height={24}
-                  />
-                  <span className="text-lg">送出</span>
-                </button>
+                  <button
+                    type="submit"
+                    className={`${
+                      darkMode
+                        ? "bg-green-200 border-slate-200 border"
+                        : "bg-blue-200 border-slate-700 border"
+                    } flex items-center pl-3 pr-3 pt-2 pb-2 rounded-3xl`}
+                  >
+                    <Image
+                      src={`${
+                        darkMode ? "/send-dark.png" : "/send-bright.png"
+                      }`}
+                      alt="reset"
+                      className="mr-2"
+                      width={24}
+                      height={24}
+                    />
+                    <span className="text-lg">送出</span>
+                  </button>
+                </div>
               </div>
             </form>
           </div>
