@@ -7,7 +7,7 @@ import ResumeSection from "../components/Resume";
 import ContactSection from "../components/Contact";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -15,6 +15,10 @@ export default function Home() {
   const navColor: string = darkMode
     ? "hover:border-green-200"
     : "hover:border-blue-700";
+
+  useEffect(() => {
+    setMenuClick(false);
+  }, []);
 
   return (
     <section
@@ -73,36 +77,44 @@ export default function Home() {
                 darkMode
                   ? "bg-slate-700 text-white border-[#f1ede8] border-2"
                   : "bg-[#f1ede8] text-black border-slate-700 border-2"
-              } flex flex-col fixed left-0 top-0 w-full h-[50%] z-40 text-xl font-bold items-center`}
+              } flex flex-col fixed left-0 top-0 w-full h-[50%] z-40 text-xl font-bold items-center justify-evenly`}
             >
-              <a href="#" className={`relative hover:border-b-4 ${navColor}`}>
+              <a
+                href="#"
+                className={`border-b-4 border-transparent hover:border-b-4 ${navColor}`}
+                onClick={() => setMenuClick(!menuClick)}
+              >
                 首頁
               </a>
               <a
                 href="#projects"
-                className={`relative hover:border-b-4 ${navColor}`}
+                className={`border-b-4 border-transparent hover:border-b-4 ${navColor}`}
+                onClick={() => setMenuClick(!menuClick)}
               >
                 專案作品
               </a>
               <a
                 href="#resume"
-                className={`relative hover:border-b-4 ${navColor}`}
+                className={`border-b-4 border-transparent hover:border-b-4 ${navColor}`}
+                onClick={() => setMenuClick(!menuClick)}
               >
                 履歷
               </a>
               <a
                 href="#contact"
-                className={`relative hover:border-b-4 ${navColor}`}
+                className={`border-b-4 border-transparent hover:border-b-4 ${navColor}`}
+                onClick={() => setMenuClick(!menuClick)}
               >
                 與我聯繫
               </a>
 
               <button
                 type="button"
-                className={`${
-                  darkMode ? "bg-gray-300" : "bg-slate-100"
-                } rounded-full`}
-                onClick={() => setDarkMode(!darkMode)}
+                className=""
+                onClick={() => {
+                  setDarkMode(!darkMode);
+                  setMenuClick(!menuClick);
+                }}
               >
                 <img
                   width={48}
