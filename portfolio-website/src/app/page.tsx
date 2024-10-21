@@ -67,7 +67,7 @@ export default function Home() {
             alt="menu"
             width={48}
             height={48}
-            className="hover:cursor-pointer"
+            className="transition-all duration-300 hover:scale-110 hover:cursor-pointer"
             onClick={() => setMenuClick(!menuClick)}
           />
 
@@ -79,6 +79,13 @@ export default function Home() {
                   : "bg-[#f1ede8] text-black border-slate-700 border-2"
               } flex flex-col fixed left-0 top-0 w-full h-[50%] z-40 text-xl font-bold items-center justify-evenly`}
             >
+              <button
+                type="button"
+                className="absolute text-3xl top-8 right-8"
+                onClick={() => setMenuClick(false)}
+              >
+                ✕
+              </button>
               <a
                 href="#"
                 className={`border-b-4 border-transparent hover:border-b-4 ${navColor}`}
