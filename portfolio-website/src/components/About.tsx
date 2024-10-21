@@ -25,7 +25,7 @@ const About: React.FC<DarkModeProps> = ({ darkMode }) => {
 
   return (
     <section className="flex justify-center items-center min-h-screen ">
-      <div className="lg:w-full lg:max-w-[80%] lg:flex-row w-[80%] flex flex-col justify-center items-stretch">
+      <div className="lg:w-full lg:max-w-[80%] lg:flex-row lg:mb-0 w-[80%] mb-6 flex flex-col justify-center items-stretch">
         <div className="flex-[0_1_40%] p-4 m-2">
           <h1 className={`font-bold text-6xl p-2`}>JIAYE HE</h1>
           <h3 className={`font-bold text-2xl p-2 `}>

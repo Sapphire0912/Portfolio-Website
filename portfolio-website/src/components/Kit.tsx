@@ -37,7 +37,7 @@ const Kit: React.FC<DarkModeProps> = ({ darkMode }) => {
           </span>
         </p>
 
-        <div className=" mt-4 pt-10 pb-4 grid grid-cols-5 gap-6 w-[60%]">
+        <div className="lg:w-[60%] md:w-[80%] sm:grid-cols-5 mt-4 pt-10 pb-4 grid grid-cols-3 gap-6 w-[90%]">
           {toolKitsrc.map((item, index) => (
             <div key={index} className=" flex flex-col items-center">
               <Image
