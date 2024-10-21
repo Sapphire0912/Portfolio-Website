@@ -67,53 +67,52 @@ export default function Home() {
             onClick={() => setMenuClick(!menuClick)}
           />
 
-          <nav
-            className={`${
-              menuClick
-                ? "block fixed left-0 top-0 w-full h-[50%] z-40 text-xl font-bold"
-                : "hidden"
-            } ${
-              darkMode
-                ? "bg-slate-700 text-white border-[#f1ede8] border-2"
-                : "bg-[#f1ede8] text-black border-slate-700 border-2"
-            }`}
-          >
-            <a href="#" className={`relative hover:border-b-4 ${navColor}`}>
-              首頁
-            </a>
-            <a
-              href="#projects"
-              className={`relative hover:border-b-4 ${navColor}`}
-            >
-              專案作品
-            </a>
-            <a
-              href="#resume"
-              className={`relative hover:border-b-4 ${navColor}`}
-            >
-              履歷
-            </a>
-            <a
-              href="#contact"
-              className={`relative hover:border-b-4 ${navColor}`}
-            >
-              與我聯繫
-            </a>
-            <button
-              type="button"
+          {menuClick && (
+            <nav
               className={`${
-                darkMode ? "bg-gray-300" : "bg-slate-100"
-              } rounded-full`}
-              onClick={() => setDarkMode(!darkMode)}
+                darkMode
+                  ? "bg-slate-700 text-white border-[#f1ede8] border-2"
+                  : "bg-[#f1ede8] text-black border-slate-700 border-2"
+              } flex flex-col fixed left-0 top-0 w-full h-[50%] z-40 text-xl font-bold items-center`}
             >
-              <img
-                width={48}
-                height={48}
-                src={darkMode ? "/sun.svg" : "/moon.png"}
-                alt={darkMode ? "sun" : "moon"}
-              />
-            </button>
-          </nav>
+              <a href="#" className={`relative hover:border-b-4 ${navColor}`}>
+                首頁
+              </a>
+              <a
+                href="#projects"
+                className={`relative hover:border-b-4 ${navColor}`}
+              >
+                專案作品
+              </a>
+              <a
+                href="#resume"
+                className={`relative hover:border-b-4 ${navColor}`}
+              >
+                履歷
+              </a>
+              <a
+                href="#contact"
+                className={`relative hover:border-b-4 ${navColor}`}
+              >
+                與我聯繫
+              </a>
+
+              <button
+                type="button"
+                className={`${
+                  darkMode ? "bg-gray-300" : "bg-slate-100"
+                } rounded-full`}
+                onClick={() => setDarkMode(!darkMode)}
+              >
+                <img
+                  width={48}
+                  height={48}
+                  src={darkMode ? "/sun.svg" : "/moon.png"}
+                  alt={darkMode ? "sun" : "moon"}
+                />
+              </button>
+            </nav>
+          )}
         </div>
 
         <button
