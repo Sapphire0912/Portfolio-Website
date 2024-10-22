@@ -79,8 +79,10 @@ const Project: React.FC<DarkModeProps> = ({ darkMode }) => {
           >
             <h3 className="text-2xl font-bold mb-3">超音波影像辨識</h3>
             <div className="flex flex-wrap">
-              {labProjectTech.map((tech) => (
-                <p className={`${techStyle}`}>{tech}</p>
+              {labProjectTech.map((tech, index) => (
+                <p key={index} className={`${techStyle}`}>
+                  {tech}
+                </p>
               ))}
             </div>
             <p className="text-lg mt-1 mb-1">
