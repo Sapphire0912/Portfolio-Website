@@ -1,9 +1,9 @@
-# 專案名稱：個人簡歷網站 Portfolio-Website
+## 專案名稱：個人簡歷網站 Portfolio-Website
 
 使用 **Next.js** 與 **React.js** 技術，重新設計個人簡歷網站。  
 [參考網站連結](https://kellychi-dev.netlify.app/zh/#)
 
-## 使用技術
+### 使用技術
 
 - **RWD**
 - **Next.js**
